@@ -34,12 +34,13 @@ private slots:
 private:
     Ui::Widget *ui;
 
-    QString latinLower      = "abcdefghijklmnopqrstuvwxyz";
-    QString latinUpper      = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    QString ruLower         = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-    QString ruUpper         = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
-    QString didgits         = "0123456789";
-    QString otherSymbols    = "@$%_-.~!";
+    const QString latinLower      = "abcdefghijklmnopqrstuvwxyz";
+    const QString latinUpper      = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const QString ruLower         = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+    const QString ruUpper         = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+    const QString didgits         = "0123456789";
+    const QString otherSymbols    = "@$%_-.~!";
+
     QString filePath;
     QString alphabet;
 

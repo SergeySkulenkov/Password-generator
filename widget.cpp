@@ -6,6 +6,7 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QSettings>
+#include <QFontDatabase>
 
 
 Widget::Widget(QWidget *parent)
@@ -16,6 +17,7 @@ Widget::Widget(QWidget *parent)
 
     setFonts();
     setDefaultValues();
+    readSettings();
     loadQSSFile();
     connect(ui->generateButton,       &QPushButton::clicked,    this, &Widget::generateSlot);
     connect(ui->clearButton,          &QPushButton::clicked,    this, &Widget::clearSlot);
@@ -32,7 +34,7 @@ Widget::Widget(QWidget *parent)
             static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged),
             this,
             &Widget::countPasswordsChangeSlot);
-    readSettings();
+
     generator = QRandomGenerator::global();
 }
 
@@ -109,6 +111,7 @@ void Widget::generateSlot()
 
 QStringList Widget::getPasswords()
 {
+    alphabet.clear();
     QStringList list;
     int comboIndex = ui->registrComboBox->currentIndex();
     if(ui->latinCheckBox->isChecked()){
@@ -162,7 +165,7 @@ QStringList Widget::getUsers()
     int step = ui->stepValueSipn->value();
     QString prefix = ui->prefixEdit->text().trimmed();
 
-    for(int i=ui->stepValueSipn->value(); i<stop; i += step){
+    for(int i=ui->startValueSpin->value(); i<stop; i += step){
         list.append(prefix + QString::number(i));
     }
     return list;
@@ -311,9 +314,12 @@ void Widget::openFileDialogSlot()
 }
 
 void Widget::setFonts(){
+
     QFont font = this->font();
     font.setPointSize(10);
     this->setFont(font);
+    int id = QFontDatabase::addApplicationFont(":/fonts/consolas.ttf");
+    qDebug() << QFontDatabase::applicationFontFamilies(id);
     QFont editorFont("Consolas", 12);
     ui->resultEdit->setFont(editorFont);
 }

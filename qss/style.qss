@@ -5,7 +5,9 @@ QWidget{
 QLabel{
     color:#aaa;
 }
-QLabel::disabled, QCheckBox::disabled,  QCheckBox::checked::disabled{
+QLabel::disabled,
+QCheckBox::disabled,
+QCheckBox::checked::disabled{
     color: #555;
 }
 
@@ -33,6 +35,7 @@ QLineEdit{
     border: 1px solid #555;
     border-radius: 3px;
     background:#282828;
+    color:#eee;
 }
 QLineEdit::focus{
     background:#fff;
@@ -50,38 +53,6 @@ QLineEdit::hover {
 QLineEdit::focus::hover {
     border-color: #777;
     color:#333;
-}
-QPushButton{
-    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(55, 55, 55, 255), stop:1 rgba(70, 70, 70, 255));
-    border: 1px solid #555;
-    border-radius: 3px;
-    padding: 3px 10px;
-    color:#aaa;
-}
-QPushButton::hover{
-    border-color: #777;
-    color:#eee;
-}
-QPushButton#selectFileButton{
-    padding: 1px 10px;
-}
-
-QPushButton#generateButton {
-    border: 1px solid #555;
-    border-radius: 3px;
-    background-color: qlineargradient(spread:pad, x1:0.034, y1:1, x2:0, y2:0.0113636, stop:0 rgba(97, 177, 77, 255), stop:1 rgba(161, 230, 139, 255));
-    padding: 3px 10px;
-    color:#fff;
-}
-QPushButton#generateButton::hover{
-    border-color: #fff;
-    color:#fff;
-}
-QPushButton#generateButton::disabled,
-QPushButton#selectFileButton::disabled{
-    border: 1px solid #3f3f3f;
-    background-color: #353535;
-    color:#555;
 }
 QCheckBox {
     spacing: 5px;
@@ -101,7 +72,7 @@ QCheckBox::indicator:checked {
 }
 QCheckBox::indicator:unchecked:hover,
 QCheckBox::indicator:checked:hover{
-    border: 1px solid #373737;
+    border: 1px solid #414141;
 }
  QCheckBox::indicator::checked:disabled{
     image: url(:/images/indicator_disabled_normal.png);
@@ -116,21 +87,9 @@ QComboBox {
     border: 1px solid #555;
     border-radius: 3px;
     padding: 1px 18px 1px 3px;
-    min-width: 20px;
     color:#ddd;
 }
 
-QComboBox:editable {
-    background: white;
-}
-
-QComboBox:!editable, QComboBox::drop-down:editable {
-     background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(55, 55, 55, 255), stop:1 rgba(70, 70, 70, 255));
-}
-
-QComboBox:!editable:on, QComboBox::drop-down:editable:on {
-    background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(55, 55, 55, 255), stop:1 rgba(70, 70, 70, 255));
-}
 QComboBox:on {
     padding-top: 3px;
     padding-left: 4px;
@@ -161,8 +120,8 @@ QComboBox::hover {
     border-color: #777;
     color:#eee;
 }
+
 QSpinBox {
-    min-width: 20px;
     border: 1px solid #555;
     border-radius: 3px;
     background:#282828;
@@ -225,6 +184,38 @@ QSpinBox::hover {
     color:#eee;
 }
 
+QPushButton{
+    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(55, 55, 55, 255), stop:1 rgba(70, 70, 70, 255));
+    border: 1px solid #555;
+    border-radius: 3px;
+    padding: 3px 10px;
+    color:#aaa;
+}
+QPushButton::hover{
+    border-color: #777;
+    color:#eee;
+}
+QPushButton#selectFileButton{
+    padding: 1px 10px;
+}
+
+QPushButton#generateButton {
+    border: 1px solid #555;
+    border-radius: 3px;
+    background-color: qlineargradient(spread:pad, x1:0.034, y1:1, x2:0, y2:0.0113636, stop:0 rgba(97, 177, 77, 255), stop:1 rgba(161, 230, 139, 255));
+    padding: 3px 10px;
+    color:#fff;
+}
+QPushButton#generateButton::hover{
+    border-color: #fff;
+    color:#fff;
+}
+QPushButton#generateButton::disabled,
+QPushButton#selectFileButton::disabled{
+    border: 1px solid #3f3f3f;
+    background-color: #353535;
+    color:#555;
+}
 
 QMenu{
     background:#ddd;
